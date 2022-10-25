@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Files</title>
+  </head>
+<style>
+    .head{
+        text-align: center;
+    }
+    .t{
+        margin: 20px;
+    }
+
+:root {
+  font-family: sans-serif;
+}
+img {
+  border: 0;
+}
+th {
+  text-align: start;
+  white-space: nowrap;
+}
+th > a {
+  color: inherit;
+}
+table[order] > thead > tr > th {
+  cursor: pointer;
+}
+table[order] > thead > tr > th::after {
+  display: none;
+  width: .8em;
+  margin-inline-end: -.8em;
+  text-align: end;
+}
+table[order="asc"] > thead > tr > th::after {
+  content: "\2193"; /* DOWNWARDS ARROW (U+2193) */
+}
+table[order="desc"] > thead > tr > th::after {
+  content: "\2191"; /* UPWARDS ARROW (U+2191) */
+}
+table[order][order-by="0"] > thead > tr > th:first-child > a ,
+table[order][order-by="1"] > thead > tr > th:first-child + th > a ,
+table[order][order-by="2"] > thead > tr > th:first-child + th + th > a {
+  text-decoration: underline;
+}
+table[order][order-by="0"] > thead > tr > th:first-child::after ,
+table[order][order-by="1"] > thead > tr > th:first-child + th::after ,
+table[order][order-by="2"] > thead > tr > th:first-child + th + th::after {
+  display: inline-block;
+}
+table.remove-hidden > tbody > tr.hidden-object {
+  display: none;
+}
+td {
+  white-space: nowrap;
+}
+table.ellipsis {
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 0;
+}
+table.ellipsis > tbody > tr > td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* name */
+/* name */
+th:first-child {
+  padding-inline-end: 2em;
+}
+/* size */
+th:first-child + th {
+  padding-inline-end: 1em;
+}
+td:first-child + td {
+  text-align: end;
+  padding-inline-end: 1em;
+}
+/* date */
+td:first-child + td + td {
+  padding-inline-start: 1em;
+  padding-inline-end: .5em;
+}
+/* time */
+td:first-child + td + td + td {
+  padding-inline-start: .5em;
+}
+.mdiv{
+  align-self:center;
+vertical-align: middle;  
+}
+</style>
+  <body>
+    <h1 class="head">Darshan Public Directory</h1>
+    <br />
+     <div class="mdiv">
+            <table class="t" >
+      <tr>
+        <th>Name</th>
+        <th>Size</th>
+        <th colspan="2">Last Modified</th>
+      </tr>
+      
+     
+        {% for i in range(length(fname)) %} 
+           
+          <tr>
+            
+            <td>
+              <table>
+                <tr>
+                  <td>
+                    <img src="/file.jpeg" alt="" srcset="" width="20px" height="20px">
+                  </td>
+                <td>
+                <a  href="{{ burl }}/{{ at(fname, i) }}" download>
+                {{ at(fname, i) }}
+               </a>
+              </td>
+              </tr>
+              </table>
+            </td>
+            <td>{{ at(fsize, i) }}</td>
+            <td>{{ at(fdate, i) }}</td>
+            <td>{{ at(ftime, i) }}</td>
+          </tr>
+        {% endfor %}
+    </table>
+</div>
+
+   
+  </body>
+</html>

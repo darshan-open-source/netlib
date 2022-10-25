@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    hello {{name}} ss {{- surname -}}
+
+    <br />
+    {% for x in guests %}
+    <ol class="{{x}}">
+      {{loop.index1}} {{x}}
+    </ol>
+    {% endfor %}
+
+    <ol class="{{x}}">
+      mndcv
+    </ol>
+    <ol class="{{x}}">
+      xcmk
+    </ol>
+    <ol class="{{x}}">
+      ndvkh
+    </ol>
+  </body>
+  {%if time.hour == 20 or time.minute == 60%}
+  <h1>time is 20 annd and minute is 60</h1>
+  {%else if time.hour == 30 %}
+  <h1>time isn 30</h1>
+  {%else%}
+  <h1>time is null</h1>
+  {%endif%}
+
+  {%for i in range(10)%}
+  <h1>{{loop.index1}}</h1>
+  {%endfor%}
+  {{ join(guests, ".") }}
+  {{default(surname,"null surname")}}
+  {{default(percentage,"203")}}
+
+
+  
+
+  
+</html>
