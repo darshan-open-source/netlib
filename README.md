@@ -34,8 +34,6 @@ Netlib is a free and open source header only c++ library for backend development
 
 - Curl
 
-- rapidJSON
-
 - inja Template engine
 
 ## Simple Usage
