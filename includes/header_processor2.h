@@ -72,6 +72,9 @@ void header_processor2::process() {
 
 
     while (readded != 1 || buffer_array.get()->length() != 0) {
+          if(buffer_array.get()->length()==0){
+                  continue;
+        }
         int pos = -1;
 
         m.lock();
