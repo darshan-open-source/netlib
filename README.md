@@ -1,6 +1,6 @@
 # 🚀 Netlib
 
-Netlib is a free and open source header only c++ library for backend development inspired by Django
+Netlib is a free and open source c++ library for backend development inspired by Django.
 
 ## Features
 
@@ -30,9 +30,9 @@ Netlib is a free and open source header only c++ library for backend development
 
 - Asio
 
-- libmysqlclient
+- libmysqlclient (optional)
 
-- Curl
+- Curl (optional)
 
 - inja Template engine
 
@@ -78,8 +78,8 @@ int main()
     s.onRequest("/", "index.html");
     s.onRequest("/admin", admin);
 
-    s.start();
-    s.wait();
+    s.startServer();
+    s.runServer();
 }
 ```
 
@@ -114,9 +114,7 @@ we will provide Documentation as soon as possible
 
 ## IMPORTANT NOTES
 
-This library is in development and developer  is continuously updating the code
-
-This library may contain  vulnerbliityA
+This library is in development and developer  is continuously updating the code.
 
 if anyone found any type of bug or want to suggest any feature contact us at darshanopensource@gmail.com
 
